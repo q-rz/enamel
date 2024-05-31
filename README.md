@@ -1,4 +1,4 @@
 # ENAMEL
-A rigorous benchmark for evaluating the efficiency of LLM-generated code
+A rigorous benchmark for evaluating the capability of LLMs in generating efficient code
 
 Coming soon...
