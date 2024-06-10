@@ -1,6 +1,6 @@
 # ENAMEL
 
-[![arXiv](https://img.shields.io/badge/2406.@@@@@-arXiv-B31B1B.svg)]() [![HuggingFace](https://img.shields.io/badge/enamel-HuggingFace-FF9D0B.svg)](https://huggingface.co/datasets/q-rz/enamel) [![PyPI](https://img.shields.io/badge/enam-PyPI-006DAD.svg)](https://pypi.org/project/enam/)
+[![arXiv](https://img.shields.io/badge/2406.@@@@@-arXiv-B31B1B.svg)]() [![HuggingFace](https://img.shields.io/badge/enamel-HuggingFace-FF9D0B.svg)](https://doi.org/10.57967/hf/2456) [![PyPI](https://img.shields.io/badge/enam-PyPI-006DAD.svg)](https://pypi.org/project/enam/)
 
 [Getting Started](#getting-started) | [Library Usage](#library-usage) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
