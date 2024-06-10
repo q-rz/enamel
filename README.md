@@ -67,9 +67,9 @@ We welcome LLM developers to submit their results to enrich this leaderboard. If
 |No.|Name|eff@1|pass@1|
 |:-:|:-|:-:|:-:|
 |1|HumanEval+|0.517|0.958|
-|2|GPT-4 Turbo|0.470|0.796|
+|2|GPT-4 Turbo (Nov 2023)|0.470|0.796|
 |3|HumanEval|0.458|0.908|
-|4|GPT-4|0.454|0.831|
+|4|GPT-4 (Jun 2023)|0.454|0.831|
 |5|Llama 3 70B Instruct|0.421|0.746|
 |6|Mixtral 8x22B Instruct|0.408|0.746|
 |7|Claude 3 Opus|0.401|0.789|
