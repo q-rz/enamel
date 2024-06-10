@@ -1,6 +1,8 @@
-# ENAMEL: EfficieNcy AutoMatic EvaLuator
+# ENAMEL
 
 A benchmark for evaluating the capability of large language models (LLMs) in generating efficient code
+
+Comming soon...
 
 [Getting Started](#getting-started) | [Reproduction](#reproduction) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
