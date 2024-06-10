@@ -9,7 +9,7 @@ ENAMEL is a rigorous and high-standard benchmark for evaluating the capability o
 - A problem set consisting of 142 high-quality problems selected from [OpenAI HumanEval](https://github.com/openai/human-eval);
 - Expert-written efficient reference solutions, setting a high-standard for efficiency evaluation;
 - Expert-written strong test case generators, enabling a rigorous evaluation of both correctness and efficiency;
-- A Python library for easily evaluating the efficiency of LLM-generated code.
+- A Python library `enam` for easily evaluating the efficiency of LLM-generated code.
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ Our benchmark is also available as a Python library. Please see `demo.py` for an
 
 Our library can be installed via `pip`:
 ```sh
-pip install ena --upgrade
+pip install enam --upgrade
 ```
 
 ## LLM Leaderboard
