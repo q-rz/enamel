@@ -23,7 +23,7 @@ Before running the code, please ensure the following dependencies:
 
 ### Using our generated test cases and LLM-generated code samples
 
-To facilitate reproduction, we share on HuggingFace our [generated test cases](https://huggingface.co/datasets/rq5uiuc/enamel/blob/main/cache/eval~tests.pkl) and [LLM-generated code samples](https://huggingface.co/datasets/rq5uiuc/enamel/tree/main/samples) used in our evaluation. Please download `eval~tests.pkl` into the `cache/' folder and download the code samples into the `samples/` folder. 
+To facilitate reproduction, we share on HuggingFace our [generated test cases](https://huggingface.co/datasets/rq5uiuc/enamel/blob/main/cache/eval~tests.pkl) and [LLM-generated code samples](https://huggingface.co/datasets/rq5uiuc/enamel/tree/main/samples) used in our evaluation. Please download `eval~tests.pkl` into the `cache/` folder and download the code samples into the `samples/` folder. 
 
 To reproduce our results, please run `demo.py`, where `--load_name` specifies the file name of code samples (without file extension), and `--tests` specifies the generated test cases. For example, to evaluate the HumanEval+ canonical solutions, please run:
 ```sh
