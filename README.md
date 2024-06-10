@@ -53,10 +53,12 @@ Our benchmark is also available as a Python library. Please see `demo.py` for an
 
 ### Installation
 
-Our library can be installed via `pip`:
+Our library `enam` can be installed via `pip`:
 ```sh
 pip install enam --upgrade
 ```
+
+**Note:** To distinguish from our benchmark ENAMEL, we name our library `enam`.
 
 ## LLM Leaderboard
 
