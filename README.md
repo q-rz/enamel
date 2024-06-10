@@ -1,7 +1,5 @@
 # ENAMEL
 
-Under construction. Comming soon...
-
 [Getting Started](#getting-started) | [Library Usage](#library-usage) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
 ## What is ENAMEL?
@@ -51,15 +49,55 @@ The `.json` file should be a dict of lists such that `codes[str(i)][j]` is the $
 
 ## Library Usage
 
-TODO
+Our benchmark is also available as a Python library. Please see `demo.py` for an example usage of our library. The detailed usage will be posted soon.
+
+### Installation
+
+Our library can be installed via `pip`:
+```sh
+pip install ena --upgrade
+```
 
 ## LLM Leaderboard
 
-The following table is a leaderboard of 30 LLMs under greedy decoding. For more results, please refer to our paper.
+The following table is a leaderboard of 30 LLMs (under greedy decoding) as well as HumanEval/HumanEval+ canonical solutions. For more results, please refer to our paper.
 
-We welcome LLM developers to submit their results to enrich this leaderboard. If you want to submit your results, please organize the generated code samples into a `.json` file and contact Ruizhong Qiu (rq5 AT illinois DOT edu).
+We welcome LLM developers to submit their results to enrich this leaderboard. If you would like to submit your results, please organize your generated code samples into a `.json` file as described above and contact Ruizhong Qiu (rq5 AT illinois DOT edu).
 
-TODO
+|No.|Name|eff@1|pass@1|
+|:-:|:-|:-:|:-:|
+|1|HumanEval+|0.517|0.958|
+|2|GPT-4 Turbo|0.470|0.796|
+|3|HumanEval|0.458|0.908|
+|4|GPT-4|0.454|0.831|
+|5|Llama 3 70B Instruct|0.421|0.746|
+|6|Mixtral 8x22B Instruct|0.408|0.746|
+|7|Claude 3 Opus|0.401|0.789|
+|8|Phind Code Llama V2|0.394|0.683|
+|9|Claude 3 Haiku|0.386|0.739|
+|10|ChatGPT|0.364|0.683|
+|11|Claude 3 Sonnet|0.345|0.662|
+|12|Llama 3 8B Instruct|0.344|0.592|
+|13|Code Llama 34B Python|0.268|0.458|
+|14|Mixtral 8x7B Instruct|0.266|0.444|
+|15|Code Llama 70B Python|0.264|0.500|
+|16|Code Llama 7B Python|0.247|0.373|
+|17|Code Llama 13B Python|0.216|0.408|
+|18|StarCoder|0.195|0.352|
+|19|CodeGen 6B|0.193|0.296|
+|20|CodeGen 16B|0.169|0.310|
+|21|CodeT5+ 16B|0.160|0.317|
+|22|CodeGen 2B|0.153|0.254|
+|23|Mistral 7B|0.152|0.275|
+|24|Vicuna 13B|0.123|0.176|
+|25|SantaCoder|0.100|0.141|
+|26|Incoder 6B|0.091|0.127|
+|27|GPT-J|0.083|0.106|
+|28|Incoder 1B|0.066|0.092|
+|29|Vicuna 7B|0.061|0.099|
+|30|GPT-Neo 2B|0.043|0.056|
+|31|PolyCoder|0.037|0.049|
+|32|StableLM 7B|0.020|0.021|
 
 ## Acknowledgements
 
