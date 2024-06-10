@@ -2,7 +2,7 @@
 
 A benchmark for evaluating the capability of large language models (LLMs) in generating efficient code
 
-[Getting Started](#-getting-started) | [Reproduction](#-reproduction) | [LLM Leaderboard](#-llm-leaderboard) | [Acknowledgements](#-acknowledgements)
+[Getting Started](#getting-started) | [Reproduction](#reproduction) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
 ## About
 
@@ -34,6 +34,10 @@ python3 demo.py --load_name gpt-4_temp_0.0 --tests cache/eval~tests.pkl
 ```
 
 **Warning:** It is known to us that our evaluator might be unable to kill a code sample if the code uses `try ... except ...` within an infinity loop because the killing signal will be caught. We have decided not to resolve this issue because resolving it with `multiprocessing` will significantly slow down the evaluation process. If you do encounter this issue, please consider removing such code samples. (This issue indeed happens for two code samples provided by EvalPlus, so our demo will automatically handle it if you use the zipped code samples from EvalPlus.) 
+
+## LLM Leaderboard
+
+TODO
 
 ## Acknowledgements
 
