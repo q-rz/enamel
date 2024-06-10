@@ -60,7 +60,7 @@ pip install ena --upgrade
 
 ## LLM Leaderboard
 
-The following table is a leaderboard of 30 LLMs (under greedy decoding) as well as HumanEval/HumanEval+ canonical solutions. For more results, please refer to our paper.
+The following table is a leaderboard of 30 LLMs (under greedy decoding) as well as HumanEval/HumanEval+ canonical solutions. Results show that LLMs fall short of generating expert-level efficient code. For more results, please refer to our paper.
 
 We welcome LLM developers to submit their results to enrich this leaderboard. If you would like to submit your results, please organize your generated code samples into a `.json` file as described above and contact Ruizhong Qiu (rq5 AT illinois DOT edu).
 
