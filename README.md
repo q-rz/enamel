@@ -15,7 +15,7 @@ ENAMEL is a rigorous and high-standard benchmark for evaluating the capability o
 
 If you are interested in our work, please feel free to check [our paper](https://arxiv.org/abs/2406.06647) for detail.
 
-<center><img src="https://github.com/q-rz/enamel/raw/main/figures/fig-enamel.svg?t=2406131021" alt="Illustration of ENAMEL" style="max-width:1000px;width:100%;" /></center>
+<center><img src="https://github.com/q-rz/enamel/raw/main/figures/fig-enamel.svg" alt="Illustration of ENAMEL" style="max-width:1000px;width:100%;" /></center>
 
 ## Getting Started
 
