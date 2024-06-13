@@ -1,6 +1,6 @@
 # ENAMEL
 
-[![arXiv](https://img.shields.io/badge/2406.06647-arXiv-B31B1B)](https://arxiv.org/abs/2406.06647) [![HuggingFace](https://img.shields.io/badge/enamel-HuggingFace-FF9D0B)](https://doi.org/10.57967/hf/2456) [![PyPI](https://img.shields.io/badge/enam-PyPI-006DAD)](https://pypi.org/project/enam/)
+[![Our paper on arXiv](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%202406.06647-arXiv-B31B1B.svg)](https://arxiv.org/abs/2406.06647) [![Our dataset on HuggingFace](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enamel-HuggingFace-FF9D0B.svg)](https://doi.org/10.57967/hf/2456) [![Our Python library on PyPI](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enam-PyPI-006DAD.svg)](https://pypi.org/project/enam/)
 
 [Getting Started](#getting-started) | [Library Usage](#library-usage) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
@@ -13,7 +13,9 @@ ENAMEL is a rigorous and high-standard benchmark for evaluating the capability o
 - Expert-written strong test case generators, enabling a rigorous evaluation of both correctness and efficiency;
 - A Python library `enam` for easily evaluating the efficiency of LLM-generated code.
 
-Please see our paper for detail.
+If you are interested in our work, please feel free to check [our paper](https://arxiv.org/abs/2406.06647) for detail.
+
+<center><img src="https://github.com/q-rz/enamel/raw/main/figures/fig-enamel.png" alt="Illustration of ENAMEL" style="max-width:1000px;width:100%;" /></center>
 
 ## Getting Started
 
