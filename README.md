@@ -7,6 +7,7 @@
 ## What is ENAMEL?
 
 ENAMEL is a rigorous and high-standard benchmark for evaluating the capability of large language models (LLMs) in generating efficient code. We provide:
+
 - A new metric $\text{eff}@k$ characterizing the relationship between code efficiency and sample size $k$;
 - A problem set consisting of 142 high-quality problems selected from [OpenAI HumanEval](https://github.com/openai/human-eval);
 - Expert-written efficient reference solutions, setting a high-standard for efficiency evaluation;
@@ -22,6 +23,7 @@ If you are interested in our work, please feel free to check [our paper](https:/
 ### Dependencies
 
 Before running the code, please ensure the following dependencies:
+
 - Python >= 3.10
 - Tqdm >= 3.1.4
 - NumPy >= 1.4.0
