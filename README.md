@@ -57,7 +57,9 @@ The `.json` file should be a dict of lists such that `codes[str(i)][j]` is the $
 
 ## Library Usage
 
-Our benchmark is also available as a Python library. Please see `demo.py` for an example usage of our library. The detailed usage will be posted soon.
+Our benchmark is also available as a Python library. Please see `demo.py` for an example usage of our library. 
+
+**Notice:** DO NOT use multiple processes. That might negatively affect the efficiency results.
 
 ### Installation
 
