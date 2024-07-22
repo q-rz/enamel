@@ -80,9 +80,9 @@ __accepted = __check(__input, __answer, __output)
         self.timeout_factor = timeout_factor
         self.tolerence_sec = tolerence_sec
         self.tests = [[] for i in range(self.n_problems)]
-        self.refs = [None for i in range(self.n_problems)]
         self.seed = seed
     def make_tests(self, save_name = None):
+        self.refs = [None for i in range(self.n_problems)]
         tbar = tqdm(self.subset)
         for i in tbar:
             tbar.set_description(f'Generating inputs for #{i}')
@@ -124,26 +124,26 @@ __accepted = __check(__input, __answer, __output)
             return True
         else:
             return False
-    def get_time_correction(self, i): # computes the calibration factor of of execution time
-        j = self.refs[i].lid
-        k = self.refs[i].cid
+    def compute_refs(self, i): # computes the calibration factor of of execution time
         problem = self.problems.iloc[i]
-        test = self.tests[i][j][-1][k]
-        n_reps = self.n_reps[j]
-        elapsed = [None for rep in range(n_reps)]
-        for rep in range(n_reps):
-            scope = dict(time = time, __input = deepcopy(test.input)) # in case that the code modifies the input
-            unsafe_execute(self.TPL_RUN % (problem.prompt, problem.reference_solution, problem.entry_point), scope) # assuming that the reference solution is error-free
-            elapsed[rep] = scope['__t1'] - scope['__t0']
-        elapsed = calc_exec_time(elapsed).item()
-        return self.refs[i].ref_max / elapsed
+        tests = self.tests[i]
+        for j in range(len(tests)):
+            if self.hardness[j]:
+                for k in range(len(tests[j][-1])):
+                    test = tests[j][-1][k]
+                    n_reps = self.n_reps[j]
+                    elapsed = [None for rep in range(n_reps)]
+                    for rep in range(n_reps):
+                        scope = dict(time = time, __input = deepcopy(test.input)) # in case that the code modifies the input
+                        unsafe_execute(self.TPL_RUN % (problem.prompt, problem.reference_solution, problem.entry_point), scope) # assuming that the reference solution is error-free
+                        elapsed[rep] = scope['__t1'] - scope['__t0']
+                    test.ref = calc_exec_time(elapsed).item()
+        return Refs(tests = tests, hardness = self.hardness)
     def zero_effs(self):
         return [0. for j in range(self.n_levels)]
-    def evaluate1(self, i, code, time_correction, verbose): # evaluates one code sample
+    def evaluate1(self, i, code, refs, verbose): # evaluates one code sample
         problem = self.problems.iloc[i]
-        refs = self.refs[i]
         timeout = self.timeout_factor * refs.ref_max
-        time_limit = timeout / min(time_correction, 1.)
         effs = []
         elapsed_list = []
         for j, (size, tests) in enumerate(self.tests[i]):
@@ -155,12 +155,12 @@ __accepted = __check(__input, __answer, __output)
                 for rep in range(n_reps):
                     scope = dict(time = time, input = None, print = None, __input = deepcopy(test.input)) # in case that the code modifies the input
                     try:
-                        unsafe_timed_execute(self.TPL_RUN % (problem.prompt, code, problem.entry_point), scope, self.memory, time_limit + self.tolerence_sec)
+                        unsafe_timed_execute(self.TPL_RUN % (problem.prompt, code, problem.entry_point), scope, self.memory, timeout + self.tolerence_sec)
                         scope['__input'] = test.input
                         scope['__answer'] = test.answer # to prevent the code reading the answer
                         unsafe_execute(self.TPL_TEST % (problem.prompt, problem.checker), scope) # assuming that the checker does not modify the input
                     except TimeoutException as e:
-                        if verbose: print(f'[problem={i}, level={j}, case={k}] Time Limit Exceeded (size={size}, time_limit={time_limit:.4f})')####
+                        if verbose: print(f'[problem={i}, level={j}, case={k}] Time Limit Exceeded (size={size}, timeout={timeout:.4f})')####
                         level_break = True
                         break
                     except MemoryError as e:
@@ -185,7 +185,7 @@ __accepted = __check(__input, __answer, __output)
                 if level_break:
                     break
                 else:
-                    level_elapsed.append(calc_exec_time(elapsed).item() * time_correction)
+                    level_elapsed.append(calc_exec_time(elapsed).item())
             elapsed_list.append(level_elapsed)
             if level_break:
                 break
@@ -210,13 +210,13 @@ __accepted = __check(__input, __answer, __output)
         gc.collect()
         for i in tbar:
             tbar.set_description(f'Evaluating #{i}')
-            time_correction = self.get_time_correction(i = i)
+            refs = self.compute_refs(i = i)
             n_levels = len(self.tests[i])
             problem_passes = []
             problem_effs = []
             problem_elapsed = []
             for code in codes[i]:
-                passed, code_effs, code_elapsed = self.evaluate1(i = i, code = code, time_correction = time_correction, verbose = verbose)
+                passed, code_effs, code_elapsed = self.evaluate1(i = i, code = code, refs = refs, verbose = verbose)
                 problem_passes.append(passed)
                 problem_effs.append(code_effs)
                 problem_elapsed.append(code_elapsed)
