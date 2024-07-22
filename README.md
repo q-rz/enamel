@@ -59,7 +59,7 @@ The `.json` file should be a dict of lists such that `codes[str(i)][j]` is the $
 
 Our benchmark is also available as a Python library. Please see `demo.py` for an example usage of our library. 
 
-**Notice:** DO NOT use multiple processes. That might negatively affect the efficiency results.
+**Notice:** DO NOT use multiple threads or processes in efficiency evaluation. That might negatively affect the efficiency results.
 
 ### Installation
 
