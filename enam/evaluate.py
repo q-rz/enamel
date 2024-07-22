@@ -142,7 +142,7 @@ __accepted = __check(__input, __answer, __output)
     def evaluate1(self, i, code, time_correction, verbose): # evaluates one code sample
         problem = self.problems.iloc[i]
         refs = self.refs[i]
-        timeout = self.timeout_factor * refs.ref_max / time_correction
+        timeout = self.timeout_factor * refs.ref_max
         effs = []
         elapsed_list = []
         for j, (size, tests) in enumerate(self.tests[i]):
@@ -154,7 +154,7 @@ __accepted = __check(__input, __answer, __output)
                 for rep in range(n_reps):
                     scope = dict(time = time, input = None, print = None, __input = deepcopy(test.input)) # in case that the code modifies the input
                     try:
-                        unsafe_timed_execute(self.TPL_RUN % (problem.prompt, code, problem.entry_point), scope, self.memory, timeout + self.tolerence_sec)
+                        unsafe_timed_execute(self.TPL_RUN % (problem.prompt, code, problem.entry_point), scope, self.memory, timeout / time_correction + self.tolerence_sec)
                         scope['__input'] = test.input
                         scope['__answer'] = test.answer # to prevent the code reading the answer
                         unsafe_execute(self.TPL_TEST % (problem.prompt, problem.checker), scope) # assuming that the checker does not modify the input
