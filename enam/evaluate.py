@@ -142,7 +142,7 @@ __accepted = __check(__input, __answer, __output)
     def evaluate1(self, i, code, time_correction, verbose): # evaluates one code sample
         problem = self.problems.iloc[i]
         refs = self.refs[i]
-        timeout = self.timeout_factor * refs.ref_max
+        timeout = self.timeout_factor * refs.ref_max / time_correction
         effs = []
         elapsed_list = []
         for j, (size, tests) in enumerate(self.tests[i]):
