@@ -24,6 +24,7 @@ If you are interested in our work, please feel free to check [our paper](https:/
 
 Before running the code, please ensure the following dependencies:
 
+- Linux
 - Python >= 3.10
 - Tqdm >= 3.1.4
 - NumPy >= 1.4.0
