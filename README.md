@@ -1,6 +1,6 @@
 # ENAMEL
 
-[![Our paper on arXiv](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%202406.06647-arXiv-B31B1B.svg)](https://arxiv.org/abs/2406.06647) [![Our dataset on HuggingFace](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enamel-HuggingFace-FF9D0B.svg)](https://doi.org/10.57967/hf/2456) [![Our Python library on PyPI](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enam-PyPI-006DAD.svg)](https://pypi.org/project/enam/)
+[![Our paper on arXiv](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%202406.06647-arXiv-B31B1B.svg)](https://arxiv.org/abs/2406.06647) [![Our dataset on HuggingFace](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enamel-HuggingFace-FF9D0B.svg)](https://huggingface.co/datasets/q-rz/enamel) [![Our Python library on PyPI](https://github.com/q-rz/enamel/raw/main/figures/img.shields.io%20badge%20enam-PyPI-006DAD.svg)](https://pypi.org/project/enam/)
 
 [Getting Started](#getting-started) | [Library Usage](#library-usage) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
