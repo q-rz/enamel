@@ -4,6 +4,15 @@
 
 [Getting Started](#getting-started) | [Library Usage](#library-usage) | [LLM Leaderboard](#llm-leaderboard) | [Acknowledgements](#acknowledgements)
 
+```bibtex
+@inproceedings{qiu2025efficient,
+  title={How efficient is {LLM}-generated code? A rigorous \& high-standard benchmark},
+  authors={Qiu, Ruizhong and Zeng, Weiliang Will and Ezick, James and Lott, Christopher and Tong, Hanghang},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025}
+}
+```
+
 ## What is ENAMEL?
 
 ENAMEL is a rigorous and high-standard benchmark for evaluating the capability of large language models (LLMs) in generating efficient code. We provide:
